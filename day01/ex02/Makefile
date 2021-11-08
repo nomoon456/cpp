@@ -1,12 +1,13 @@
-NAME = out
+NAME = a.out
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror
 
 SRCS = main.cpp
+
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	@ $(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@ $(CC) $(CFLAGS) $(SRCS) -o $(NAME) -fsanitize=address
 
 run:
 	./$(NAME)

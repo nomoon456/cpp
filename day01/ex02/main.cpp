@@ -8,6 +8,9 @@ int main(void)
     std::string*    strptr = &str;
     std::string&    strref = str;
 
-    std::cout << "string ptr = " << *strptr << std::endl;
-    std::cout << "string ref = " << strref << std::endl ;
+    std::cout << &str << std::endl;
+    std::cout << strptr << std::endl;
+    std::cout << &strref << std::endl;
+    std::cout << *strptr << std::endl;
+    std::cout << strref << std::endl ;
 }

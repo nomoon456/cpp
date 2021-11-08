@@ -1,8 +1,9 @@
-NAME = out
+NAME = zombie
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp
+SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+
 all: $(NAME)
 
 $(NAME): $(SRCS)

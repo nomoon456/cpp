@@ -2,14 +2,17 @@
 
 Zombie::Zombie(void)
 {
+	std::cout << "Constructor called." << std::endl;
 }
+
+Zombie::Zombie(std::string name): _name(name) {}
 
 void Zombie::Announce(void)
 {
-	std::cout << "I'm " << this->name << std::endl;
+	std::cout << _name << "Brainnnzzzzzzz.." << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << "Zombie " << this->name << " is destroyed" << std::endl;
+	std::cout << "Zombie " << _name << " is gone" << std::endl;
 }

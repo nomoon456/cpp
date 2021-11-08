@@ -4,8 +4,10 @@ int main(void)
 {
 	Zombie *zombie;
 
-	zombie = newZombie("Jean");
-	randomChump("Michel");
+	Zombie zombie1(std::string("jojo"));
+	zombie1.Announce();
+	zombie = newZombie("uer");
 	zombie->Announce();
+	randomChump("hhhh");
 	delete zombie;
 }
