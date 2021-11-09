@@ -1,7 +1,7 @@
 #ifndef KAREN_HPP
-# define KAREN_HPP
+#define KAREN_HPP
 
-# include <iostream>
+#include <iostream.h>
 
 class Karen {
     private:
@@ -13,6 +13,6 @@ class Karen {
         Karen(void);
         ~Karen(void);
         void complain( std::string level );
-};
+}
 
 #endif

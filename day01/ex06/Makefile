@@ -1,4 +1,4 @@
-NAME = sihjishjsh
+NAME = karenFilter
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 STDCPP = -std=c++98

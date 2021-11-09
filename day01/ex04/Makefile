@@ -1,9 +1,9 @@
-NAME = sihjishjsh
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
-STDCPP = -std=c++98
+NAME=replace
+CC=g++
+CFLAGS=-Wall -Wextra -Werror
+STDCPP=-std=c++98
 
-SRCS = Karen.cpp main.cpp
+SRCS = Replace.cpp main.cpp
 
 all: $(NAME)
 

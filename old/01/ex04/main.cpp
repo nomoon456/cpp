@@ -1,6 +1,3 @@
-//
-// Created by moboustt on 1/2/2021.
-//
 
 #include <iostream>
 #include "Replace.h"
