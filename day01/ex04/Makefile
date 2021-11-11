@@ -3,7 +3,7 @@ CC=g++
 CFLAGS=-Wall -Wextra -Werror
 STDCPP=-std=c++98
 
-SRCS = Replace.cpp main.cpp
+SRCS = main.cpp
 
 all: $(NAME)
 

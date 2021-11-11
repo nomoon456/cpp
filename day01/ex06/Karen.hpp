@@ -1,7 +1,14 @@
 #ifndef KAREN_HPP
-#define KAREN_HPP
+# define KAREN_HPP
 
-#include <iostream.h>
+# include <iostream>
+
+enum Levels {
+    DEBUG=0,
+    INFO,
+    WARNING,
+    ERROR
+};
 
 class Karen {
     private:
@@ -13,6 +20,6 @@ class Karen {
         Karen(void);
         ~Karen(void);
         void complain( std::string level );
-}
+};
 
 #endif

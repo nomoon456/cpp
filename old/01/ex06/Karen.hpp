@@ -4,13 +4,6 @@
 
 #include <iostream>
 
-enum Levels {
-    DEBUG=0,
-    INFO,
-    WARNING,
-    ERROR
-};
-
 class Karen {
 
 public:

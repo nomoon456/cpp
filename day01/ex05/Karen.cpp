@@ -34,7 +34,7 @@ void Karen::error( void )
 
 void Karen::complain( std::string level )
 {
-    std::string funArr[] = {std::string("debug"), std::string("info"), std::string("warning"), std::string("error")};
+    std::string funArr[] = {std::string("DEBUG"), std::string("INFO"), std::string("WARNING"), std::string("ERROR")};
     callFunc call[] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     for (int i = 0; i < 4; ++i)
     {

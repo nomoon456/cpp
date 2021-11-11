@@ -8,7 +8,7 @@ class Zombie {
     public:
                         Zombie(void);
                         ~Zombie(void);
-            explicit    Zombie(std::string name);
+            explicit    Zombie(std::string name); //explicit tag = cannot be used for implicit conversion and copy initialization
             void        Announce(void);
     private:
             std::string _name;
