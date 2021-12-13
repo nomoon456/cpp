@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
+/*
 int main() {
     Bureaucrat bureaucrattt(15, "Joe");
 	std::cout << bureaucrattt << std::endl;
@@ -14,4 +15,20 @@ int main() {
 	Bureaucrat brrrrr(151, "hhhh");
     Bureaucrat br(0, "Yeaer");
 	return 0;
+}*/
+
+int main(void)
+{
+	Form ff("", 3, 2);
+	Bureaucrat ss(1, "hhhh");
+	try {
+		ss.upRank();
+		std::cout << ff << std::endl;
+	} catch (std::exception &e) {
+		std::cout <<"Exception caught: "<< e.what() <<std::endl;
+	}
+
+	Bureaucrat b2(1, "hhhh");
+	ff.beSigned(b2);
+	b2.signForm(ff);
 }
