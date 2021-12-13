@@ -12,9 +12,12 @@ class Brain {
 	    virtual ~Brain();
 	    Brain &operator=(const Brain & other);
         void    setIdeas();
+        std::string getIdeas(int i) const;
     protected:
         std::string ideas[100];
 
 };
+
+std::ostream& operator<<(std::ostream& out, const Brain &brain);
 
 #endif

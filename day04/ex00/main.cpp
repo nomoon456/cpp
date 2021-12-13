@@ -16,7 +16,7 @@ int main()
     std::cout << i->getType() << " " << std::endl;
     std::cout << f->getType() << " " << std::endl;
     std::cout << l->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound(); //cat sound!
     j->makeSound();
     f->makeSound();
     l->makeSound();
