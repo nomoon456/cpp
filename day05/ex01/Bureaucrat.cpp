@@ -80,9 +80,9 @@ void    Bureaucrat::deRank() {
 
 void Bureaucrat::signForm(const Form &form) {
 	if(form.isItSigned())
-		std::cout << _name << " sign " << form << std::endl;
+		std::cout << _name << " sign " << form.getName() << std::endl;
 	else
-		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
+		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form.getName() << " because he's too low elo lol." << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {

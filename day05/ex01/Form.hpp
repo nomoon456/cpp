@@ -3,7 +3,7 @@
 
 #include "Bureaucrat.hpp"
 
-class Bureaucrat;
+//class Bureaucrat;
 
 class Form {
     public:
@@ -24,7 +24,7 @@ class Form {
                 std::string _err;
         };
         Form();
-        explicit Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
+        Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
         Form(const Form &other);
         ~Form();
         Form &operator=(const Form &other);

@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <iostream>
+#include <string>
+#include <exception>
 /*
 int main() {
     Bureaucrat bureaucrattt(15, "Joe");
@@ -15,8 +18,8 @@ int main() {
 	Bureaucrat brrrrr(151, "hhhh");
     Bureaucrat br(0, "Yeaer");
 	return 0;
-}*/
-
+}
+*/
 int main(void)
 {
 	Form ff("", 3, 2);

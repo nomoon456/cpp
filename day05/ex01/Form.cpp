@@ -1,26 +1,26 @@
 #include "Form.hpp"
 
-const   char *Bureaucrat::GradeTooHighException::what() const throw() {
+const   char *Form::GradeTooHighException::what() const throw() {
     return _err.c_str();
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string &s){
+Form::GradeTooHighException::GradeTooHighException(const std::string &s){
     std::exception();
     _err = s;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
 
-const   char *Bureaucrat::GradeTooLowException::what() const throw() {
+const   char *Form::GradeTooLowException::what() const throw() {
     return _err.c_str();
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &s) {
+Form::GradeTooLowException::GradeTooLowException(const std::string &s) {
     std::exception();
     _err = s;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
 Form::Form() { std::cout << "Default Constructor" << std::endl; }
 

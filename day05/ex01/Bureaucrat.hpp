@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
 
 class Form;
 
@@ -26,7 +25,6 @@ class Bureaucrat {
             private:
                 std::string _err;
         };
-        Bureaucrat();
         ~Bureaucrat();
         Bureaucrat(int grade, const std::string& name);
         Bureaucrat &operator=(Bureaucrat const &other);
@@ -36,10 +34,11 @@ class Bureaucrat {
         void    deRank(void);
         void    signForm(const Form& form);
     private:
+        Bureaucrat();
         int _note;
         std::string _name;
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
+std::ostream &operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
 
 #endif
