@@ -10,7 +10,7 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat::WrongCat(const WrongCat &other) {
-	std::cout << "Dog Copy Constructor." << std::endl;
+	std::cout << "WrongCat Copy Constructor." << std::endl;
 	type = other.type;
 }
 

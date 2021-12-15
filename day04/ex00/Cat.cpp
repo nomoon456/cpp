@@ -10,7 +10,7 @@ Cat::~Cat() {
 }
 
 Cat::Cat(const Cat &other) {
-	std::cout << "Dog Copy Constructor." << std::endl;
+	std::cout << "Cat Copy Constructor." << std::endl;
 	type = other.type;
 }
 
