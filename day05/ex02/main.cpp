@@ -6,53 +6,50 @@
 
 int main(void) {
 
-	std::cout << "*------------------Testing the ShrubberyCreationForm------------------*" << std::endl;
-	Bureaucrat bureaucrat1(1, "Joe");
-	Bureaucrat bureaucrat2(10, "hhhh");
-	ShrubberyCreationForm scf("Home");
-	std::cout << "name: " << scf.getName() << std::endl;
-	std::cout << "GradeToExec: " << scf.getRequiredRankToExec() << std::endl;
-	std::cout << "GradeToSign: " << scf.getRequiredRankToSign() << std::endl;
+	std::cout << " - Testing ShrubberyCreationForm - " << std::endl << std::endl;
+	Bureaucrat bureaucratt(1, "Joe");
+	Bureaucrat bureaucrattt(10, "hhhh");
+	ShrubberyCreationForm shruberry("Home");
+	std::cout << "name: " << shruberry.getName() << std::endl;
+	std::cout << "GradeToExec: " << shruberry.getRequiredRankToExec() << std::endl;
+	std::cout << "GradeToSign: " << shruberry.getRequiredRankToSign() << std::endl;
 	std::cout << std::endl;
-
 	try {
-		scf.execute(bureaucrat1);
+		shruberry.execute(bureaucratt);
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	scf.beSigned(bureaucrat2);
-	scf.execute(bureaucrat2);
+	shruberry.beSigned(bureaucrattt);
+	shruberry.execute(bureaucrattt);
 	std::cout << std::endl;
 
-	std::cout << "*------------------Testing the RobotomyRequestForm------------------*" << std::endl;
-	RobotomyRequestForm rrf("homeAgain");
-	std::cout << "name: " << rrf.getName() << std::endl;
-	std::cout << "GradeToExec: " << rrf.getRequiredRankToExec() << std::endl;
-	std::cout << "GradeToSign: " << rrf.getRequiredRankToSign() << std::endl;
+	std::cout << std::endl << "- Testing RobotomyRequestForm - " << std::endl << std::endl;
+	RobotomyRequestForm robotomy("homeAgain");
+	std::cout << "name: " << robotomy.getName() << std::endl;
+	std::cout << "GradeToExec: " << robotomy.getRequiredRankToExec() << std::endl;
+	std::cout << "GradeToSign: " << robotomy.getRequiredRankToSign() << std::endl;
 	std::cout << std::endl;
-
 	try {
-		rrf.execute(bureaucrat1);
+		robotomy.execute(bureaucratt);
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	rrf.beSigned(bureaucrat2);
-	rrf.execute(bureaucrat2);
+	robotomy.beSigned(bureaucrattt);
+	robotomy.execute(bureaucrattt);
 	std::cout << std::endl;
 
-	std::cout << "*------------------Testing the PresidentialPardonForm------------------*" << std::endl;
+	std::cout << std::endl << " - Testing PresidentialPardonForm - " << std::endl << std::endl;
 	Bureaucrat bureaucrat3(4, "joe");
-	PresidentialPardonForm ppf("homeAgain");
-	std::cout << "name: " << ppf.getName() << std::endl;
-	std::cout << "GradeToExec: " << ppf.getRequiredRankToExec() << std::endl;
-	std::cout << "GradeToSign: " << ppf.getRequiredRankToSign() << std::endl;
+	PresidentialPardonForm presidential("homeAgain");
+	std::cout << "name: " << presidential.getName() << std::endl;
+	std::cout << "GradeToExec: " << presidential.getRequiredRankToExec() << std::endl;
+	std::cout << "GradeToSign: " << presidential.getRequiredRankToSign() << std::endl;
 	std::cout << std::endl;
-
 	try {
-		ppf.execute(bureaucrat3);
+		presidential.execute(bureaucrat3);
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	ppf.beSigned(bureaucrat3);
-	ppf.execute(bureaucrat3);
+	presidential.beSigned(bureaucrat3);
+	presidential.execute(bureaucrat3);
 }
