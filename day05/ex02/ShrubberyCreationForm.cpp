@@ -4,7 +4,9 @@ ShrubberyCreationForm::ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm default constructor" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) :Form(target, 137, 145) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) :Form(target, 137, 145) {
+    std::cout << "ShrubberyCreationForm constructor that call Form" << std::endl;
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm Destructor" << std::endl;

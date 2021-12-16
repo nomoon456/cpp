@@ -1,17 +1,12 @@
 #include "PresidentialPardonForm.hpp"
-/*
-        typedef Form::GradeTooHighException GradeTooLowException;
-        typedef Form::GradeTooLowException GradeTooLowException;
-        PresidentialPardonForm();
-        explicit    PresidentialPardonForm(const std::string &target);
-        virtual     ~PresidentialPardonForm();
-        void        execute(const Bureaucrat &exec) const;*/
 
 PresidentialPardonForm::PresidentialPardonForm() {
     std::cout << "PresidentialPardonForm Default Constructor" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form(target, 5, 25) {}
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form(target, 5, 25) {
+    std::cout << "PresidentialPardonForm constructor that call Form" << std::endl;
+}
 
 PresidentialPardonForm::~PresidentialPardonForm() {
     std::cout << "PresidentialPardonForm Destructor" << std::endl;
