@@ -22,7 +22,7 @@ class Form {
                 std::string _err;
         };
         Form();
-        Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
+        explicit Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
         Form(const Form &other);
         ~Form();
         Form &operator=(const Form &other);

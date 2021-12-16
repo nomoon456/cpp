@@ -25,6 +25,7 @@ Form::GradeTooLowException::~GradeTooLowException() throw() {}
 Form::Form() { std::cout << "Default Constructor" << std::endl; }
 
 Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSign) {
+    std::cout << "ca passe" << std::endl;
     _name = name;
     _isSigned = false;
     _requiredRankToSign = requiredRankToSign;
