@@ -31,6 +31,7 @@ class Form {
         bool    isItSigned() const;
         int     getRequiredRankToSign() const;
         int     getRequiredRankToExec() const;
+        virtual void execute(Bureaucrat const & executor) const = 0;
     private:
         std::string _name;
         bool    _isSigned;
