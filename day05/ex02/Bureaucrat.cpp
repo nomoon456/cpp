@@ -87,6 +87,14 @@ void Bureaucrat::signForm(const Form &form) {
 		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
 }
 
+/*Terminez en ajoutant une fonction executeForm (Form Const & form) au bureau-
+crate. Il doit essayer d’exécuter le Form et, en cas de succès, affichera quelque chose
+comme <bureaucrat> executs <form>. Sinon, affiche un message d’erreur explicite.*/
+
+void    Bureaucrat::executeForm(Form const &form){
+
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
     out << " Bureaucrat name is: " << bureaucrat.getName() << " ranked: " << bureaucrat.getGrade() << std::endl;
     return out;

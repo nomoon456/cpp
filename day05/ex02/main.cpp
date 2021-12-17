@@ -52,4 +52,5 @@ int main(void) {
 	}
 	presidential.beSigned(bureaucrat3);
 	presidential.execute(bureaucrat3);
+	bureaucrat3.executeForm(presidential);
 }
