@@ -22,7 +22,7 @@ Form::GradeTooLowException::GradeTooLowException(const std::string &s) {
 
 Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
-Form::Form() { std::cout << "Default Form Constructor" << std::endl; }
+Form::Form() { std::cout << "Form Default Constructor" << std::endl; }
 
 Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSign) {
     std::cout << "Form Constructor" << std::endl;
@@ -38,15 +38,16 @@ Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSi
 
 Form::Form(const Form &other) {
     std::cout << "Form Copy Constructor" << std::endl;
-    _name = other._name;
-    _isSigned = other._isSigned;
-    _requiredRankToExec = other._requiredRankToExec;
-    _requiredRankToSign = other._requiredRankToSign;
+        _name = other._name;
+        _isSigned = other._isSigned;
+        _requiredRankToExec = other._requiredRankToExec;
+        _requiredRankToSign = other._requiredRankToSign;
 }
 
 Form::~Form() {std::cout << "Form Destructor" << std::endl;}
 
 Form &Form::operator=(const Form &other) {
+    std::cout << "Form Copy Assginement" << std::endl;
     if (this != &other)
         _isSigned = other._isSigned;
     return *this;

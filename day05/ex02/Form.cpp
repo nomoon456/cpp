@@ -47,6 +47,7 @@ Form::Form(const Form &other) {
 Form::~Form() {std::cout << "Form Destructor" << std::endl;}
 
 Form &Form::operator=(const Form &other) {
+    std::cout << "Form Copy Assignement" << std::endl;
     if (this != &other)
         _isSigned = other._isSigned;
     return *this;

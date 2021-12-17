@@ -24,7 +24,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &s) {
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 Bureaucrat::Bureaucrat() {
-    std::cout << "Default Constructor" << std::endl;
+    std::cout << "Default Bureaucrat Constructor" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -44,6 +44,7 @@ Bureaucrat::Bureaucrat(int grade, const std::string &name) : _note(grade), _name
 }
 
 Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &other) {
+    std::cout << "Bureaucrat Copy Assignement" << std::endl;
     if (this != &other) {
         _name = other._name;
         _note = other._note;

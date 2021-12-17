@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 const   char *Bureaucrat::GradeTooHighException::what() const throw() {
     return _err.c_str();
@@ -43,7 +44,7 @@ Bureaucrat::Bureaucrat(int grade, const std::string &name) : _note(grade), _name
 }
 
 Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &other) {
-    std::cout << "Bureaucrat Copy Assignement" << std::endl;
+    std::cout << "Bureacrat Copy Assignement" << std::endl;
     if (this != &other) {
         _name = other._name;
         _note = other._note;
@@ -77,6 +78,13 @@ void    Bureaucrat::deRank() {
     } catch (const std::exception &except) {
         std::cout << "Exception has been caught: " << except.what();
     }
+}
+
+void Bureaucrat::signForm(const Form &form) {
+	if(form.isItSigned())
+		std::cout << _name << " sign " << form << std::endl;
+	else
+		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
