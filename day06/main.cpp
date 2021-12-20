@@ -1,9 +1,14 @@
 #include "Conv.hpp"
 #include "Display.hpp"
+#include <limits.h>
 
 int exitError(std::string const &err, int code) {
     std::cout << err << std::endl;
     exit(code);
+}
+
+bool    Same(double k, double l) {
+    return fabs(k - l) < std::numeric_limits<double>::epsilon(); //fabs Compute absolute value
 }
 
 int main(int ac, char **av) {
@@ -22,7 +27,7 @@ int main(int ac, char **av) {
                 i = std::stoi(in); //Convert string to integer
                 if (i < 32 || i > 127)
                     c = 0;
-                if (fabs((double)f - (double)i)) //fabs Compute absolute value
+                if (Same(f, i))
                     Display(c, i, f, d, true, false);
                 else
                     Display(c, i, f, d, false, false);

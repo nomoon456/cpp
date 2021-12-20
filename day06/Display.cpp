@@ -5,7 +5,7 @@ Display::Display(const std::string& dChar, const std::string& dInt, const std::s
 }
 
 Display::Display(char dChar, int dInt, float dFloat, double dDouble, bool aff, bool possibleConv) {
-    if ((int)dChar > 32 && dChar < 128 && !possibleConv)
+    if ((int)dChar > 32 && (int)dChar < 128 && !possibleConv)
         std::cout << "char: '" << dChar << "'" << std::endl;
     else if (!possibleConv)
         std::cout << "char: Non displayable." << std::endl;
