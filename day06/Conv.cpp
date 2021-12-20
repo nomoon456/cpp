@@ -4,6 +4,23 @@ Conv::Conv(const std::string &in) : _in(in) {}
 
 Conv::~Conv() {}
 
+bool    Conv::Check() {
+    if (isZ()) {
+        Display("Non displayable", "0", "0.0f", "0.0");
+        return (true);
+    }
+    if (_in == "nan" || _in == "nanf") {
+        Display("impossible", "impossible", "nanf", "nan");
+        return true;
+    } else if (_in == "-inf" || _in == "-inff") {
+        Display("impossible", "impossible", "-inff", "-infs");
+        return true;
+    } else if (_in == "+inf" || _in == "+inff") {
+        Display("impossible", "impossible", "+inff", "+inf");
+        return true;
+    }
+
+}
 
 bool    Conv::isZ() {
     for (size_t y = 0; y < _in.size(); ++y) {

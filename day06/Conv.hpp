@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include "Display.hpp"
 
 class Conv {
     public:
