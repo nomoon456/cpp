@@ -21,10 +21,10 @@ int main(int ac, char **av) {
         Conv        conv(in);
         if (!conv.Check()) {
             try {
-                d = (double)f;
-                c = (char)c;
-                f = std::stof(in); // Interprets a floating point value in a string str
-                i = std::stoi(in); //Convert string to integer
+                f = atof(in.c_str()); // Interprets a floating point value in a string str
+                i = atof(in.c_str()); //Convert string to integer
+                d = static_cast<double>(f);
+                c = static_cast<char>(i);
                 if (i < 32 || i > 127)
                     c = 0;
                 if (Same(f, i))

@@ -1,4 +1,5 @@
 #include "Conv.hpp"
+#include "Display.hpp"
 
 Conv::Conv(const std::string &in) : _in(in) {}
 
@@ -25,7 +26,7 @@ bool    Conv::Check() {
             exitError("conversion is impossible.", EXIT_FAILURE);
     }
     try {
-        long long ll = std::stoll(_in);
+        long long ll = atof(_in.c_str());
         if (ll > std::numeric_limits<int64_t>::max() || ll < std::numeric_limits<int64_t>::min())
             exitError("conversion is impossible.", EXIT_FAILURE);
     } catch (std::exception &e) {
