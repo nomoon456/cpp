@@ -86,12 +86,12 @@ void Bureaucrat::signForm(const Form &form) {
 	else
 		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
 }
-
+/*
 void    Bureaucrat::executeForm(Form const &form){
     form.execute(*this);
     std::cout << _name << " executs " << form.getName() << std::endl;
 }
-
+*/
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
     out << " Bureaucrat name is: " << bureaucrat.getName() << " ranked: " << bureaucrat.getGrade() << std::endl;
     return out;

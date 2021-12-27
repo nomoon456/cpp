@@ -22,8 +22,6 @@ Form::GradeTooLowException::GradeTooLowException(const std::string &s) {
 
 Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
-Form::Form() { std::cout << "Form Default Constructor" << std::endl; }
-
 Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSign) {
     std::cout << "Form Constructor" << std::endl;
     _name = name;

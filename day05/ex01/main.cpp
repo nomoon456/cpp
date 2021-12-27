@@ -14,4 +14,8 @@ int main(void)
 	Bureaucrat b2(1, "hhhh");
 	ff.beSigned(b2);
 	b2.signForm(ff);
+	Form aze("", 2, 2);
+	Bureaucrat wer(40, "Joe");
+	wer.signForm(aze);
+
 }

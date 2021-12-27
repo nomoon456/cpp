@@ -10,8 +10,8 @@ class RobotomyRequestForm : public Form {
         typedef Form::GradeTooLowException GradeTooLowException;
         RobotomyRequestForm();
         explicit RobotomyRequestForm(const std::string &target);
-        ~RobotomyRequestForm();
-        void execute(const Bureaucrat &exec) const;
+        virtual ~RobotomyRequestForm();
+        void execute(const Bureaucrat & executor) const;
 };
 
 #endif

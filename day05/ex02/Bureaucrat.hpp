@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <cstdlib>
+#include <fstream>
 
 class Form;
 

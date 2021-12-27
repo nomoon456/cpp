@@ -84,7 +84,7 @@ void Bureaucrat::signForm(const Form &form) {
 	if(form.isItSigned())
 		std::cout << _name << " sign " << form << std::endl;
 	else
-		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
+		std::cout << "Bureaucrat " << _name<< " can't sign cuz the required rank is "<< form.getRequiredRankToSign() << " and " << _name << " is " << _note << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {

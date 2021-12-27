@@ -52,5 +52,9 @@ int main(void) {
 	}
 	presidential.beSigned(bureaucrat3);
 	presidential.execute(bureaucrat3);
-	bureaucrat3.executeForm(presidential);
-}
+/*/
+	Bureaucrat bureaucrat1(4, "hhhh");
+	Form *form = new Form("Joe", 3, 3);
+	ShrubberyCreationForm *shrub = new ShrubberyCreationForm;
+	bureaucrat1.executeForm(form);
+*/}
