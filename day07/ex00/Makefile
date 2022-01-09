@@ -2,7 +2,7 @@ NAME = a.out
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 CPP_VERSION = -std=c++98
-SRCS = main.cpp Base.cpp
+SRCS = main.cpp
 
 all: $(NAME)
 

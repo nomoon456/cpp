@@ -3,40 +3,22 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-/*
-Base    *generate(void) {
-    int r;
 
-    r = rand() % 3;
-    if (r == 0) {
+Base    *generate(void) {
+    srand(time(NULL));
+    int r = (rand() % 3) + 1;
+    std::cout << r << std::endl;
+    if (r == 1) {
         std::cout << "A instance" << std::endl;
         return new A;
-    } else if (r == 1) {
+    } else if (r == 2) {
         std::cout << "B Instance" << std::endl;
         return new B;
-    } else if (r == 2) {
+    } else if (r == 3) {
         std::cout << "c Instance" << std::endl;
         return new C;
     }
     return (new A);
-}
-*/
-
-Base *generate(void) {
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 gen(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(0, 2); // define the range
-
-    int index = distr(gen);
-    if (index == 0) {
-        std::cout << "Instance of A is returned" << std::endl;
-        return new A;
-    } else if (index == 1) {
-        std::cout << "Instance of B is returned" << std::endl;
-        return new B;
-    }
-    std::cout << "Instance of D is returned" << std::endl;
-    return new C;
 }
 
 void    identify(Base * p) {
