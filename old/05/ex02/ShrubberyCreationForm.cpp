@@ -10,9 +10,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
+	std::string nName = getName() + "_shrubbery";
 	if (this->isIsSigned() && executor.getGrade() <= this->getGradeToExec()) {
 		std::fstream f;
-		f.open(getName() + "_shrubbery", std::ios::in | std::ios::out | std::ios::trunc);
+		f.open(nName.c_str(), std::ios::in | std::ios::out | std::ios::trunc);
 		if (f.is_open()) {
 			std::string tree = "    oxoxoo    ooxoo\n"
 							   "  ooxoxo oo  oxoxooo\n"

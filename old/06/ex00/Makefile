@@ -8,7 +8,7 @@ SRCS = OutPut.cpp Scalar.cpp main.cpp
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	@ $(CC) $(CPP_VERSION) $(CFLAGS) $(SRCS) -o $(NAME) -g3 -fsanitize=address
+	@ $(CC) $(CFLAGS) $(SRCS) -o $(NAME) -g3 -fsanitize=address
 
 run:
 	./$(NAME)

@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 18/9/2021.
-//
-
 #ifndef __PRESIDENTIALPARDONFORM_HPP__
 #define __PRESIDENTIALPARDONFORM_HPP__
 

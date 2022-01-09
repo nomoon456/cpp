@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 4/8/2021.
-//
-
 #include "Form.hpp"
 
 Form::Form(const std::string &name, int gradeToExec, int gradeToSign) :

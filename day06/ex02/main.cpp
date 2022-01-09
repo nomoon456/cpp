@@ -1,16 +1,9 @@
-/*Ecrivez une fonction "Base * generate(void);" qui instancie de facon aléatoire A,
-B ou C et retourne un pointeur de l’instance Base. Vous pouvez utiliser n’importe quelle
-fonction pour la generation aléatoire.
-Écrivez une fonction "void identify(Base * p);" qui affiche "A", "B" ou "C" selon
-le type réel de p.
-Écrivez une fonction "void identify( Base & p);". Vous ne devez jamais utiliser
-un pointeur dans cette fonction. Cette fonction affiche "A", "B" ou "C" selon le type réel
-de p.*/
-
 #include <random>
 #include "Base.hpp"
 #include <iostream>
-
+#include <ctime>
+#include <cstdlib>
+/*
 Base    *generate(void) {
     int r;
 
@@ -25,6 +18,25 @@ Base    *generate(void) {
         std::cout << "c Instance" << std::endl;
         return new C;
     }
+    return (new A);
+}
+*/
+
+Base *generate(void) {
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 gen(rd()); // seed the generator
+    std::uniform_int_distribution<> distr(0, 2); // define the range
+
+    int index = distr(gen);
+    if (index == 0) {
+        std::cout << "Instance of A is returned" << std::endl;
+        return new A;
+    } else if (index == 1) {
+        std::cout << "Instance of B is returned" << std::endl;
+        return new B;
+    }
+    std::cout << "Instance of D is returned" << std::endl;
+    return new C;
 }
 
 void    identify(Base * p) {
@@ -41,27 +53,26 @@ void    identify(Base * p) {
         std::cout << "C" << std::endl;
 }
 
-
+void identify(Base &p) {
+    try {
+        A &a = dynamic_cast<A &>(p);
+        (void) a;
+        std::cout << "A" << std::endl;
+        } catch (std::exception &e) {}
+    try {
+        B &b = dynamic_cast<B &>(p);
+        (void) b;
+        std::cout << "B" << std::endl;
+        } catch (std::exception &e) {}
+    try {
+        C &c = dynamic_cast<C &>(p);
+        (void) c;
+        std::cout << "C" << std::endl;
+        } catch (std::exception &e) {}
+}
 
 int main() {
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    generate();
-    
+    identify(generate());
+    identify(*generate());
     return (0);
 }

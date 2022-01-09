@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 18/9/2021.
-//
-
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) :

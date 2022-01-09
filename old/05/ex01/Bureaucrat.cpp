@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 3/8/2021.
-//
-
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -64,4 +60,4 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &str) :
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() { return _error.c_str(); }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT {}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}

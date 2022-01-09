@@ -10,7 +10,10 @@
 #include <cmath>
 
 #include "OutPut.hpp"
-
+#include <string>
+#include <iostream>
+#include <cmath>
+#include <limits>
 
 class Scalar {
 public:

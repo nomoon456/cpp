@@ -3,6 +3,8 @@
 //
 
 #include "Scalar.hpp"
+#include <limits.h>
+#include <limits>
 
 int exit_error(std::string const &error, int exit_code) {
     std::cout << error << std::endl;

@@ -1,7 +1,3 @@
-//
-// Created by moboustt on 3/8/2021.
-//
-
 #ifndef __BUREAUCRAT_HPP__
 #define __BUREAUCRAT_HPP__
 
@@ -29,7 +25,7 @@ public:
 
 		const char *what() const throw();
 
-		~GradeTooHighException() _NOEXCEPT;
+		virtual ~GradeTooHighException() throw();
 
 	private:
 		std::string _error;
@@ -43,7 +39,7 @@ public:
 
 		const char *what() const throw();
 
-		~GradeTooLowException() _NOEXCEPT;
+		virtual ~GradeTooLowException() throw();
 
 	private:
 		std::string _error;

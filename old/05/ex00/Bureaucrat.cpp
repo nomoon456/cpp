@@ -71,4 +71,4 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string &str) :
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() { return _error.c_str(); }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT {}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw {}
