@@ -6,8 +6,8 @@
 
 class RobotomyRequestForm : public Form {
     public:
-        typedef Form::GradeTooHighException GradeTooHighException;
-        typedef Form::GradeTooLowException GradeTooLowException;
+        typedef Bureaucrat::GradeTooHighException GradeTooHighException;
+        typedef Bureaucrat::GradeTooLowException GradeTooLowException;
         RobotomyRequestForm();
         explicit RobotomyRequestForm(const std::string &target);
         virtual ~RobotomyRequestForm();

@@ -6,8 +6,8 @@
 
 class ShrubberyCreationForm : public Form {
     public:
-        typedef Form::GradeTooHighException GradeTooHighException;
-        typedef Form::GradeTooLowException GradeTooLowException;
+        typedef Bureaucrat::GradeTooHighException GradeTooHighException;
+        typedef Bureaucrat::GradeTooLowException GradeTooLowException;
         explicit ShrubberyCreationForm(const std::string &target);
         virtual ~ShrubberyCreationForm();
         void execute(const Bureaucrat & executor) const;

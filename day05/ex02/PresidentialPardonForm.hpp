@@ -5,8 +5,8 @@
 
 class PresidentialPardonForm : public Form {
     public:
-        typedef Form::GradeTooHighException GradeTooHighException;
-        typedef Form::GradeTooLowException GradeTooLowException;
+        typedef Bureaucrat::GradeTooHighException GradeTooHighException;
+        typedef Bureaucrat::GradeTooLowException GradeTooLowException;
         explicit    PresidentialPardonForm(const std::string &target);
         virtual     ~PresidentialPardonForm();
         void execute(const Bureaucrat & executor) const;

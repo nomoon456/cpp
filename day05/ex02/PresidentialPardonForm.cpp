@@ -9,6 +9,8 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 }
 
 void    PresidentialPardonForm::execute(const Bureaucrat &exec) const {
+    std::cout << "coucou" << std::endl;
+    std::cout << exec << std::endl;
     if (this->isItSigned() && exec.getGrade() <= this->getRequiredRankToExec())
         std::cout << this->getName() << " was forgiven by Zafod Beeblebrox" << std::endl;
     else

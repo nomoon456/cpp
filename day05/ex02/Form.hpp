@@ -5,22 +5,22 @@
 
 class Form {
     public:
-        class GradeTooHighException : public std::exception {
-            public:
-                explicit GradeTooHighException(const std::string &str);
-                virtual const char *what() const throw();
-                virtual ~GradeTooHighException() throw();
-            private:
-                std::string _err;
-        };
-        class GradeTooLowException : public std::exception {
-            public:
-                explicit GradeTooLowException(const std::string &str);
-                virtual const char *what() const throw();
-                virtual ~GradeTooLowException() throw();
-            private:
-                std::string _err;
-        };
+        // class GradeTooHighException : public std::exception {
+        //     public:
+        //         explicit GradeTooHighException(const std::string &str);
+        //         virtual const char *what() const throw();
+        //         virtual ~GradeTooHighException() throw();
+        //     private:
+        //         std::string _err;
+        // };
+        // class GradeTooLowException : public std::exception {
+        //     public:
+        //         explicit GradeTooLowException(const std::string &str);
+        //         virtual const char *what() const throw();
+        //         virtual ~GradeTooLowException() throw();
+        //     private:
+        //         std::string _err;
+        // };
         Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
         Form(const Form &other);
         ~Form();

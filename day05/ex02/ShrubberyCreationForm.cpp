@@ -31,5 +31,5 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &exec) const {
         } else
             std::cout << "Can't open file " << getName() + "_shruberry" << std::endl;
     } else
-        throw GradeTooLowException("Grade Too Low");
+        throw GradeTooLowException("auhguahguahgu Too Low");
 }
