@@ -80,22 +80,24 @@ void    Bureaucrat::deRank() {
     }
 }
 
-void Bureaucrat::signForm(const Form &form) {
-	if(form.isItSigned())
-		std::cout << _name << " sign " << form << std::endl;
-	else
-		std::cout << "Bureaucrat " << _name<< " can't sign cuz "<< form << " because he's too low elo lol." << std::endl;
+void Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(*this);
+		std::cout << this->getName() << " signs " << form.getName() << std::endl;
+	}
+	catch(std::exception &e){
+		std::cerr << this->_name << " cannot sign because " << e.what() <<std::endl;;
+	}
 }
 
 void   Bureaucrat::executeForm(Form const &form){
-    //std::cout << form.getRequiredRankToSign() << std::endl;
-    if (this.getGrade() <= form.getRequiredRankToSign()) {
-        form._isSigned = true;
-        form.execute(*this);
-        std::cout << _name << " executs " << form << std::endl;
-    }
-    else
-        throw GradeTooLowException("Grade too Low");
+    try {
+		form.execute(*this);
+		std::cout << this->getName() << " executs " << form.getName() << std::endl;
+	}
+	catch(std::exception &e){
+		std::cerr << this->_name << " cannot execute because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {

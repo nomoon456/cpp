@@ -21,6 +21,10 @@ class Form {
             private:
                 std::string _err;
         };
+        class NotSign : public std::exception{
+			public:
+				const char* what() const throw();
+		};
         Form();
         explicit Form(const std::string &name, int requiredRankToExec, int requiredRankToSign);
         Form(const Form &other);
@@ -31,12 +35,13 @@ class Form {
         bool    isItSigned() const;
         int     getRequiredRankToSign() const;
         int     getRequiredRankToExec() const;
-        virtual void execute(Bureaucrat const & executor) const = 0;
+        void execute(Bureaucrat const & executor) const;
     private:
         std::string _name;
         bool    _isSigned;
         int    _requiredRankToSign;
         int     _requiredRankToExec;
+        virtual void execution()const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &form);

@@ -32,7 +32,8 @@ class Bureaucrat {
         std::string getName(void) const ;
         void    upRank(void);
         void    deRank(void);
-        void    signForm(const Form& form);
+        void    signForm(Form& form);
+        void    executeForm(Form const &form);
     private:
         Bureaucrat();
         int _note;

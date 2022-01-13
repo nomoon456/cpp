@@ -11,7 +11,8 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm();
         explicit RobotomyRequestForm(const std::string &target);
         ~RobotomyRequestForm();
-        void execute(const Bureaucrat &exec) const;
+        void	execution()const;
+        void execute(const Bureaucrat & executor) const;
 };
 
 #endif

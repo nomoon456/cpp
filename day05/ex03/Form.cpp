@@ -60,6 +60,16 @@ void            Form::beSigned(const Bureaucrat &bureaucrat) {
         throw Form::GradeTooLowException("Grade Too Low");
 }
 
+const char* Form::NotSign::what() const throw(){return ("Form not sign");}
+
+void Form::execute(Bureaucrat const &executor)const{
+	if (this->_isSigned == false)
+		throw Form::NotSign();
+	else if (executor.getGrade() > this->_requiredRankToExec)
+		throw Form::GradeTooLowException("Grade Too Low");
+	this->execution(); 
+}
+
 bool                Form::isItSigned() const {return _isSigned;}
 const std::string   &Form::getName() const {return _name;}
 int                 Form::getRequiredRankToSign() const {return _requiredRankToSign;}

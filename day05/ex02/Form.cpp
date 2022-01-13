@@ -1,26 +1,26 @@
 #include "Form.hpp"
 
-// const   char *Form::GradeTooHighException::what() const throw() {
-//     return _err.c_str();
-// }
+const   char *Form::GradeTooHighException::what() const throw() {
+    return _err.c_str();
+}
 
-// Form::GradeTooHighException::GradeTooHighException(const std::string &s){
-//     std::exception();
-//     _err = s;
-// }
+Form::GradeTooHighException::GradeTooHighException(const std::string &s){
+    std::exception();
+    _err = s;
+}
 
-// Form::GradeTooHighException::~GradeTooHighException() throw() {}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
 
-// const   char *Form::GradeTooLowException::what() const throw() {
-//     return _err.c_str();
-// }
+const   char *Form::GradeTooLowException::what() const throw() {
+    return _err.c_str();
+}
 
-// Form::GradeTooLowException::GradeTooLowException(const std::string &s) {
-//     std::exception();
-//     _err = s;
-// }
+Form::GradeTooLowException::GradeTooLowException(const std::string &s) {
+    std::exception();
+    _err = s;
+}
 
-// Form::GradeTooLowException::~GradeTooLowException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
 Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSign) {
     std::cout << "Form Constructor" << std::endl;
@@ -29,9 +29,9 @@ Form::Form(const std::string &name, int requiredRankToExec, int requiredRankToSi
     _requiredRankToSign = requiredRankToSign;
     _requiredRankToExec = requiredRankToExec;
     if (requiredRankToSign < 1 || requiredRankToExec < 1)
-        throw Bureaucrat::GradeTooHighException("Grade Too High");
+        throw Form::GradeTooHighException("Grade Too High");
     else if (requiredRankToSign > 150 || requiredRankToExec > 150)
-        throw Bureaucrat::GradeTooLowException("Grade Too Low");
+        throw Form::GradeTooLowException("Grade Too Low");
 }
 
 Form::Form(const Form &other) {
@@ -55,7 +55,17 @@ void            Form::beSigned(const Bureaucrat &bureaucrat) {
     if(bureaucrat.getGrade() <= _requiredRankToSign)
         _isSigned = true;
     else
-        throw Bureaucrat::GradeTooLowException("Grade Too Low");
+        throw Form::GradeTooLowException("Grade Too Low");
+}
+
+const char* Form::NotSign::what() const throw(){return ("Form not sign");}
+
+void Form::execute(Bureaucrat const &executor)const{
+	if (this->_isSigned == false)
+		throw Form::NotSign();
+	else if (executor.getGrade() > this->_requiredRankToExec)
+		throw Form::GradeTooLowException("Grade Too Low");
+	this->execution(); 
 }
 
 bool                Form::isItSigned() const {return _isSigned;}

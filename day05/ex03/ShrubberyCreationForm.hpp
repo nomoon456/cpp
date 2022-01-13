@@ -11,7 +11,8 @@ class ShrubberyCreationForm : public Form {
         ShrubberyCreationForm();
         explicit ShrubberyCreationForm(const std::string &target);
         ~ShrubberyCreationForm();
-        void execute(const Bureaucrat &exec) const;
+        void	execution()const;
+        void execute(const Bureaucrat & executor) const;
 };
 
 #endif

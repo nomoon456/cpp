@@ -12,13 +12,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm Destructor" << std::endl;
 }
 
-void    ShrubberyCreationForm::execute(const Bureaucrat &exec) const {
+void    ShrubberyCreationForm::execution() const {
     std::string nName = getName() + "_shrubbery";
-    if (this->isItSigned() && exec.getGrade() <= this->getRequiredRankToExec()) {
-        std::fstream file;
-        file.open(nName.c_str(), std::ios::in | std::ios::out | std::ios::trunc);
-        if (file.is_open()) {
-            std::string tr = "\n"
+    std::fstream file;
+    file.open(nName.c_str(), std::ios::in | std::ios::out | std::ios::trunc);
+    if (file.is_open()) {
+        std::string tr = "\n"
         "ccee88oo\n"
     "C8O8O8Q8PoOb o8oo\n"
 "dOB69QO8PdUOpugoO9bD\n"
@@ -34,6 +33,4 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &exec) const {
           file.close();
         } else
             std::cout << "Can't open file " << getName() + "_shruberry" << std::endl;
-    } else
-        throw GradeTooLowException("Grade Too Low");
 }

@@ -12,9 +12,6 @@ PresidentialPardonForm::~PresidentialPardonForm() {
     std::cout << "PresidentialPardonForm Destructor" << std::endl;
 }
 
-void    PresidentialPardonForm::execute(const Bureaucrat &exec) const {
-    if (this->isItSigned() && exec.getGrade() <= this->getRequiredRankToExec())
-        std::cout << this->getName() << " was forgiven by Zafod Beeblebrox" << std::endl;
-    else
-        throw GradeTooLowException("Grade Too Low");
+void    PresidentialPardonForm::execution() const {
+    std::cout << this->getName() << " was forgiven by Zafod Beeblebrox" << std::endl;
 }

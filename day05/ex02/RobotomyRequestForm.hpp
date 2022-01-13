@@ -11,6 +11,7 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm();
         explicit RobotomyRequestForm(const std::string &target);
         virtual ~RobotomyRequestForm();
+        void	execution()const;
         void execute(const Bureaucrat & executor) const;
 };
 
