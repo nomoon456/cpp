@@ -3,24 +3,6 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-/*
-Base    *generate(void) {
-    int r;
-
-    r = rand() % 3;
-    if (r == 0) {
-        std::cout << "A instance" << std::endl;
-        return new A;
-    } else if (r == 1) {
-        std::cout << "B Instance" << std::endl;
-        return new B;
-    } else if (r == 2) {
-        std::cout << "c Instance" << std::endl;
-        return new C;
-    }
-    return (new A);
-}
-*/
 
 Base *generate(void) {
     std::random_device rd; // obtain a random number from hardware
