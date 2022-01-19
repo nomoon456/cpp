@@ -7,7 +7,7 @@ SRCS = main.cpp Base.cpp
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	@ $(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@ $(CC) $(CPP_VERSION) $(CFLAGS) $(SRCS) -o $(NAME)
 
 run:
 	./$(NAME)

@@ -1,6 +1,3 @@
-//
-// Created by moboustt on 6/8/2021.
-//
 
 #ifndef __BASE_HPP__
 #define __BASE_HPP__

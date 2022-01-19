@@ -4,6 +4,7 @@
 #include <ctime>
 #include <cstdlib>
 
+<<<<<<< HEAD
 Base *generate(void) {
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
@@ -19,6 +20,23 @@ Base *generate(void) {
     }
     std::cout << "Instance of D is returned" << std::endl;
     return new C;
+=======
+Base    *generate(void) {
+    srand(time(NULL));
+    int r = (rand() % 3) + 1;
+    std::cout << r << std::endl;
+    if (r == 1) {
+        std::cout << "A instance" << std::endl;
+        return new A;
+    } else if (r == 2) {
+        std::cout << "B Instance" << std::endl;
+        return new B;
+    } else if (r == 3) {
+        std::cout << "c Instance" << std::endl;
+        return new C;
+    }
+    return (new A);
+>>>>>>> c8e73f5fcaada56d62f15149255a080f77d361a2
 }
 
 void    identify(Base * p) {
