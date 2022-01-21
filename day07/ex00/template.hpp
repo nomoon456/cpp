@@ -1,4 +1,5 @@
-#pragma once // __WHATEVER__HPP__
+#ifndef TEMPLATE_HPP
+#define TEMPLATE_HPP
 
 #include <iostream>
 #include <string>
@@ -33,3 +34,5 @@ class Awesome
 	private:
 		int _n;
 };
+
+#endif
