@@ -1,4 +1,4 @@
-#ifndef __ARRAY_HPP__
+/*#ifndef __ARRAY_HPP__
 #define __ARRAY_HPP__
 
 #include <iostream>
@@ -74,4 +74,70 @@ std::ostream &operator<<(std::ostream &out, const Array<T> &arr) {
 	return out;
 }
 
-#endif // __ARRAY_HPP__
+#endif // __ARRAY_HPP__*/
+
+#ifndef ARRAY_H
+#define ARRAY_H
+
+#include <iostream>
+#include <exception>
+
+template <typename T>
+class Array{
+public:
+    class IndexTooHigh : public std::exception {
+        public:
+        const char *what() const throw(){
+            return ("index too high compared to array size");
+        };
+    };
+
+public:
+
+    Array(){
+        this->_arr = new T[0]();
+        this->_sz = 0;
+    };
+    Array(unsigned int n){
+        this->_arr = new T[n]();
+        this->_sz = n;
+    };
+    Array(const Array<T> &ref){
+        *this = ref;
+    };
+    ~Array(){
+            delete[] this->_arr;
+    }
+    Array<T> &operator=(const Array<T> &ref){
+        this->_sz = ref._sz;
+        this->_arr = new T[this->_sz];
+        return(*this);
+    };
+
+
+    int size(){
+        return (this->_sz);
+    };
+
+    T &operator[](int index){
+        if (index + 1 > size())
+            throw Array<T>::IndexTooHigh();
+        return (this->_arr[index]);
+    };
+
+private:
+    T *_arr;
+    int _sz;
+     
+};
+
+template<typename T>
+std::ostream &operator<<(std::ostream &out, Array<T> &arr) {
+	out << "[ ";
+	for(int i = 0; i < arr.size(); ++i)
+		out << arr[i] << " ";
+	out << "]" << std::endl;
+	return out;
+}
+
+#endif
